@@ -6,6 +6,7 @@ library(tidyverse)
 library(readxl)
 library(dplyr)
 library(sf)
+library(readr)
 
 # Load data
 setwd("~/Desktop/GIT/Honours_Jasper/Honours_Data_Management")
@@ -49,4 +50,11 @@ data_sf <- st_as_sf(data, coords = c("beetree_lon", "beetree_lat"), crs = 4326)
 #Save cleaned data as files
 write.csv(data, "data/data_clean.csv", row.names = FALSE)
 st_write(data_sf, "data/data_clean_sf.gpkg", delete_dsn = TRUE)
+
+#check files are correct
+library(readr)
+data_clean <- read_csv("data/data_clean.csv")
+head(data_clean)
+class(data_clean$group) #no this is wrong.
+#when I saved the cleaned data file, does it not preserve data structure?
 

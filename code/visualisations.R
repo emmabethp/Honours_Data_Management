@@ -67,10 +67,10 @@ boxplot(data$initialphase_totaltime, data$finalphase_totaltime,
 #Scatter plot of final vs initial phase guiding times
 plot(data$initialphase_totaltime,
      data$finalphase_totaltime,
-     xlab = "Initial Phase Time",
-     ylab = "Final Phase Time",
+     xlab = "Initial Phase Time (mins)",
+     ylab = "Final Phase Time (mins)",
      pch = 19)
-abline(0,1, col = "blue")  # 1:1 line
+abline(0,1, col = "blue") 
 
 #Do guiding encounters speed up or slow down
 data$time_diff <- data$finalphase_totaltime - data$initialphase_totaltime

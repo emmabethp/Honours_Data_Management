@@ -4,6 +4,20 @@ format: gfm
 editor: visual
 ---
 
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#Load libraries 
+library(tidyverse); library(readxl); library(dplyr); library(sf); library(ggplot2); library(maps); library(rnaturalearth)
+
+#Load data 
+data <- read.csv("data/data_clean.csv")
+world_map <- map_data("world")
+data$bee_group <- ifelse(data$bee == "apis", "Apis", "Other")
+attach(data)
+```
+
 ## Introduction
 
 This is my 2nd hand-in for Jasper's Honours module on data and reproducability.
@@ -16,23 +30,73 @@ The data I worked with describes specific honeyguide-human guiding experiences. 
 
 The data set was relatively neat. I changed the classes of most of the variables, and then added in some useful extra columns relating to the total times of guiding interactions. 
 
+Below is a glimpse of the dataset.
+
 ```{r}
 #| echo: false
-data <- read.csv("data/data_clean.csv")
+dplyr::glimpse(data)
 ```
+
+## Data Visualisations
+
+I played around with a few plots to visualise the data. These were mainly boxplots that compared distance travelled and time of interaction versus guide age and sex, as well as the animal guided to. Below is one such plot, comparing guiding interaction time across the sexes.
 
 ```{r}
-head(data)
+#| echo: false
+#Boxplot of guiding time vs sex 
+boxplot(guiding_totaltime ~ guide_sex,
+        data = subset(data, guide_sex != "unk"), drop = TRUE,
+        xlab = "Guide Sex",
+        ylab = "Guiding Time (mins)",
+        col = c("pink" , "skyblue")
+)
 ```
 
-## Data Visulaisations
+There is also a scatter plot relating the final phase time of the guiding interaction with the initial phase time. After this (but not shown here) comes a histogram of difference in time between these two phases. 
 
-I played around with a few plots to visualise the data. These were mainly boxplots that compared distance travelled and time of interaction versus guide age and sex, as well as the animal guided to. There is also a scatter plot relayong the final phase time of the guiding interaction with the initial phase time. After this comes a histogram of difference in time between these two phases. 
+```{r}
+#| echo: false
+
+#Scatter plot of final vs initial phase guiding times
+plot(data$initialphase_totaltime,
+     data$finalphase_totaltime,
+     xlab = "Initial Phase Time (mins)",
+     ylab = "Final Phase Time (mins)",
+     pch = 19)
+abline(0,1, col = "blue")
+```
+
 The last code chunk plots a map of the trees guided to as well as whether there was a bee hive found (Apis) or another animal. 
 
-
 ```{r}
 #| echo: false
-2 * 2
+
+#plot study location
+ggplot() +
+  geom_polygon(data = world_map,
+               aes(x = long, y = lat, group = group),
+               fill = "grey90",
+               colour = "grey60") +
+  geom_point(data = data,
+             aes(x = beetree_lon, y = beetree_lat),
+             colour = "darkblue",
+             size = 3) +
+  coord_fixed(xlim = c(10, 45),
+              ylim = c(-35, -10),
+              ratio = 1.3) +
+  theme_minimal()
+
+#Plot coordinates of bee trees vs other animals 
+data_sf <- st_as_sf(data,
+                    coords = c("beetree_lon", "beetree_lat"),
+                    crs = 4326)   #make data frame a spatial item
+data_utm <- st_transform(data_sf, crs = 32737)
+buffer_10km <- st_buffer(data_utm, dist = 10000); buffer_union <- st_union(buffer_10km) #create a buffer of 10km around my points
+ggplot() +
+  geom_sf(data = buffer_union, fill = "grey100") +
+  geom_sf(data = buffer_union, fill = "lightblue", alpha = 0.3) +
+  geom_sf(data = data_utm, aes(colour = bee_group), size = 2) +
+  labs(colour = "Animal Found") +
+  theme_minimal()
 ```
 
