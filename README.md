@@ -4,7 +4,7 @@
 ## Introduction
 
 This is my 2nd hand-in for Jasper’s Honours module on data and
-reproducability.
+reproducability. This is the [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/emmabethp/Honours_Data_Management/main) link.
 
 The data I have used is from David Lloyd-Jones’s github repository that
 includes all of the data and code he used for his 2025 PhD thesis
