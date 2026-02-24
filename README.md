@@ -14,6 +14,8 @@ honeyguides sometimes guide humans to animals other than bees, but
 likely not as punishment”. His repository is available here:
 <https://github.com/dlloyd-jones/guiding_to_non_bees>.
 
+My Data Management Plan (the first handin for this module) is available [here](https://github.com/emmabethp/Honours_Data_Management/blob/main/DMP.pdf).
+
 ## Data Wrangling
 
 The data I worked with describes specific honeyguide-human guiding
