@@ -8,7 +8,7 @@ treeID;Unique identifier for the bees' nest or animal guided to
 follow_GPStrackID;Identifier for gpx. track from the relevant guiding interaction
 audio_trackID;Identifier for audio wav. track from the relevant guiding interaction
 audio_start_indication;Start time (UTC+2) for honeyguide 'indication' calls (if relevant)
-audio_finish_woo;"End time for guiding interaction when honey-hunter spots bees or animal and calls ""woo"" in the recording"
+audio_finish_woo;End time for guiding interaction when honey-hunter spots bees or animal and calls "woo" in the recording
 indication_to_woo;Time from start of indication calls to when human calls woo
 beetree_lat;Latitude in decimal degrees of bee tree
 beetree_lon;Longitude in decimal degrees of bee tree
@@ -20,4 +20,5 @@ followdist_crowfly;Distance in straight line or 'as-the-crow-flies' meters betwe
 follow_trackdist;Distance in meters of the track recorded while following a honeyguide
 GPSguiding_starttime;Timestamp (UTC+2) of the first point of the gpx. track
 GPSguiding_endtime;Timestamp (UTC+2) of the last point of the gpx. track
+
 avg_speed_kph;Average moving speed of the human carrying the GPS when following the honeyguide
