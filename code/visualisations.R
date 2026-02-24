@@ -98,7 +98,7 @@ ggplot() +
 data_sf <- st_as_sf(data,
                     coords = c("beetree_lon", "beetree_lat"),
                     crs = 4326)   #make data frame a spatial item
-data_utm <- st_transform(data_sf, crs = 32737)
+data_utm <- st_transform(data_sf, crs = 32737) #northern mozambique = EPSG:32737
 buffer_10km <- st_buffer(data_utm, dist = 10000); buffer_union <- st_union(buffer_10km) #create a buffer of 10km around my points
 ggplot() +
   geom_sf(data = buffer_union, fill = "grey100") +
