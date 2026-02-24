@@ -26,6 +26,8 @@ The data set was relatively neat. I changed the classes of most of the
 variables, and then added in some useful extra columns relating to the
 total times of guiding interactions.
 
+Below is a glimpse of the dataset.
+
     Rows: 24
     Columns: 27
     $ date                   <chr> "2018-05-18", "2018-06-06", "2018-06-07", "2018…
@@ -56,8 +58,6 @@ total times of guiding interactions.
     $ initialphase_totaltime <dbl> NA, 0.6333333, NA, 7.1666667, 0.0000000, 0.0000…
     $ bee_group              <chr> "Other", "Apis", "Apis", "Apis", "Apis", "Apis"…
 
-Above is a glimpse of the dataset.
-
 ## Data Visualisations
 
 I played around with a few plots to visualise the data. These were
@@ -77,6 +77,11 @@ phases.
 The last code chunk plots a map of the trees guided to as well as
 whether there was a bee hive found (Apis) or another animal.
 
+This plot shows where the study took place:
+
 ![](README_files/figure-commonmark/unnamed-chunk-5-1.png)
 
-![](README_files/figure-commonmark/unnamed-chunk-5-2.png)
+And this one shows the locations of the hives and compares whether there
+was a bee hive found (Apis) or another animal:
+
+![](README_files/figure-commonmark/unnamed-chunk-6-1.png)
