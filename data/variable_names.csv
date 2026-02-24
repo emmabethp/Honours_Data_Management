@@ -1,6 +1,6 @@
 Variable Name;Definition
 date;Date of the year guiding interaction occurred on
-group;Guided to bees (B), guided to animals other than bees (A)
+group;Guided to bees (B) or guided to animals other than bees (A)
 guide_age;Age class of guiding honeyguide: 4 = Adult, 3 = Adult with a few yearling feathers remaining, 1 = Juvenile in its first year, and unk = unknown
 bee;species of bee guided to (where known): apis = Apis mellifera 
 harvested;Whether or not the bees' nest was harvested and a reward left for honeyguides
@@ -22,4 +22,5 @@ GPSguiding_starttime;Timestamp (UTC+2) of the first point of the gpx. track
 GPSguiding_endtime;Timestamp (UTC+2) of the last point of the gpx. track
 
 avg_speed_kph;Average moving speed of the human carrying the GPS when following the honeyguide
+
 
