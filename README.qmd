@@ -4,23 +4,35 @@ format: gfm
 editor: visual
 ---
 
-## Quarto
+## Introduction
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+This is my 2nd hand-in for Jasper's Honours module on data and reproducability.
 
-## Running Code
+The data I have used is from David Lloyd-Jones's github repository that includes all of the data and code he used for his 2025 PhD thesis entitled "Cooperation, ecology and behaviour in the honeyguide-human mutualism", and for his article "To bees or not to bees: greater honeyguides sometimes guide humans to animals other than bees, but likely not as punishment". His repository is available here: <https://github.com/dlloyd-jones/guiding_to_non_bees>.
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+## Data Wrangling
+
+The data I worked with describes specific honeyguide-human guiding experiences. Each row is a new incident and include variables describing honeyguide age, sex, the location of the tree the human was guided to, as well as length of the phases of the interaction. A full description of each variable can be found in the file Variable Names. 
+
+The data set was relatively neat. I changed the classes of most of the variables, and then added in some useful extra columns relating to the total times of guiding interactions. 
 
 ```{r}
-1 + 1
+#| echo: false
+data <- read.csv("data/data_clean.csv")
 ```
 
-You can add options to executable code like this
+```{r}
+head(data)
+```
+
+## Data Visulaisations
+
+I played around with a few plots to visualise the data. These were mainly boxplots that compared distance travelled and time of interaction versus guide age and sex, as well as the animal guided to. There is also a scatter plot relayong the final phase time of the guiding interaction with the initial phase time. After this comes a histogram of difference in time between these two phases. 
+The last code chunk plots a map of the trees guided to as well as whether there was a bee hive found (Apis) or another animal. 
+
 
 ```{r}
 #| echo: false
 2 * 2
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).

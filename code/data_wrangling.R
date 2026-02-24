@@ -49,3 +49,4 @@ data_sf <- st_as_sf(data, coords = c("beetree_lon", "beetree_lat"), crs = 4326)
 #Save cleaned data as files
 write.csv(data, "data/data_clean.csv", row.names = FALSE)
 st_write(data_sf, "data/data_clean_sf.gpkg", delete_dsn = TRUE)
+

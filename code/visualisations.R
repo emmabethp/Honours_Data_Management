@@ -72,7 +72,6 @@ plot(data$initialphase_totaltime,
      pch = 19)
 abline(0,1, col = "blue")  # 1:1 line
 
-
 #Do guiding encounters speed up or slow down
 data$time_diff <- data$finalphase_totaltime - data$initialphase_totaltime
 hist(data$time_diff,
@@ -80,7 +79,7 @@ hist(data$time_diff,
      xlab = "Time Difference (mins)",
      col = "lightblue")
 
-#plot study extent
+#plot study location
 ggplot() +
   geom_polygon(data = world_map,
                aes(x = long, y = lat, group = group),
@@ -94,7 +93,6 @@ ggplot() +
               ylim = c(-35, -10),
               ratio = 1.3) +
   theme_minimal()
-
 
 #Plot coordinates of bee trees vs other animals 
 data_sf <- st_as_sf(data,
