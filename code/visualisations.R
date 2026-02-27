@@ -5,7 +5,7 @@
 library(tidyverse); library(readxl); library(dplyr); library(sf); library(ggplot2); library(maps); library(rnaturalearth)
 
 # Load data
-setwd("~/Desktop/GIT/Honours_Jasper/Honours_Data_Management")
+#setwd("~/Desktop/GIT/Honours_Jasper/Honours_Data_Management")
 data <- read.csv("data/data_clean.csv")
 data_sf <- st_read("data/data_clean_sf.gpkg")
 attach(data)
