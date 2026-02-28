@@ -11,8 +11,8 @@ includes all of the data and code he used for his 2025 PhD thesis
 entitled “Cooperation, ecology and behaviour in the honeyguide-human
 mutualism”, and for his article “To bees or not to bees: greater
 honeyguides sometimes guide humans to animals other than bees, but
-likely not as punishment”. His repository is available here:
-<https://github.com/dlloyd-jones/guiding_to_non_bees>.
+likely not as punishment”. His repository is available [here](
+<https://github.com/dlloyd-jones/guiding_to_non_bees>).
 
 My Data Management Plan (the first handin for this module) is available [here](https://github.com/emmabethp/Honours_Data_Management/blob/main/DMP.pdf).
 
