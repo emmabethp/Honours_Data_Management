@@ -83,6 +83,8 @@ This plot shows where the study took place:
 
 ![](README_files/figure-commonmark/unnamed-chunk-5-1.png)
 
+For a new and improved map, please check out [this repository](<https://github.com/emmabethp/Honours_GIS.git>)!
+
 And this one shows the locations of the hives and compares whether there
 was a bee hive found (Apis) or another animal:
 
